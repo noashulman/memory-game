@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+body{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+padding:0;
+background-image: url("https://www.solitaire-web-app.com/solitaire/images/backgrounds/1920x1200/green_felt.jpg");
+}
+
+.container{
+    /* border:1px solid black; */
+    height:100vh;
+    max-width:80vh;
+}
+
+.header{
+    height:10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button.button{
+    background-image: linear-gradient(to bottom, pink, lightgray);
+    font-family: 'Roboto', sans-serif;
+
+}
+
+button.button:focus{
+    outline:none;
+}
+
+.board{
+    display:block;
+    height:90%;
+    width:100%;
+    /* border:1px solid blue; */
+}
+
+.containCards{
+    height:24%;
+    width:100%;
+    /* border:1px solid red; */
+    display:flex;
+}
+
+.cards{
+    /* border:1px solid purple; */
+    padding:10px;
+    width:25%;
+}
+
+.picture{
+    background-image:none;
+    outline-style:auto;
+   
+}
+
+.youwon{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width:100%;
+    font-size: xx-large;
+    font-family: 'Roboto', sans-serif;
+}
