@@ -11,22 +11,22 @@ function shuffle(a) {
     }
     return a
 }
-let shuffled = shuffle(cardPictures)
+let shuffled = shuffle(cardPictures);
 let cards = document.querySelectorAll(".cards");
 
-const button = document.querySelector(".button")
-button.addEventListener("click", startGame)
+// const button = document.querySelector(".button");
+// button.addEventListener("click", startGame);
 
-function startGame() {
+// function startGame() {
 
 
     for (let i = 0; i < cards.length; i++) {
 
-        let div = document.createElement("div")
-        div.classList.add("picture")
-        div.style.width = "100%"
-        div.style.height = "100%"
-        div.style.backgroundRepeat = "round"
+        let div = document.createElement("div");
+        div.classList.add("picture");
+        div.style.width = "100%";
+        div.style.height = "100%";
+        div.style.backgroundRepeat = "round";
         div.style.backgroundImage = `url(${"./backcard.jpg"})`;
 
         cards[i].appendChild(div);
@@ -34,72 +34,52 @@ function startGame() {
     }
 
 
-    const elem = document.querySelectorAll(".picture")
-    let counter = 0
-    let counterWin = 0
+    const elem = document.querySelectorAll(".picture");
+    let counter = 0;
+    let counterWin = 0;
     for (let i = 0; i < elem.length; i++) {
-        elem[i].setAttribute("id", i)
-        elem[i].addEventListener("click", switchOn)
+        elem[i].setAttribute("id", i);
+        elem[i].addEventListener("click", switchOn);
 
     }
 
     function switchOn(event) {
         const index = event.target.id;
         event.target.style.backgroundImage = `url(${shuffled[index]})`;
-        console.log(event.target)
-        event.target.classList.add("pair")
-        counter++
+        console.log(event.target);
+        event.target.classList.add("pair");
+        counter++;
         console.log(counter);
 
         if (counter % 2 == 0 && counter > 0) {
-            let element = document.querySelectorAll(".pair")
-            console.log(element)
+            let element = document.querySelectorAll(".pair");
+            console.log(element);
             for (i = 0; i < element.length; i++) {
-                element[i].classList.remove("pair")
+                element[i].classList.remove("pair");
             }
             if (element[0].style.backgroundImage == element[1].style.backgroundImage) {
-                counter = 0
-                counterWin++
+                counter = 0;
+                counterWin++;
             } else {
-                setTimeout(function () { for (i = 0; i < element.length; i++) { element[i].style.backgroundImage = `url(${"./backcard.jpg"})` } }, 1000)
+                setTimeout(function () { for (i = 0; i < element.length; i++) { element[i].style.backgroundImage = `url(${"./backcard.jpg"})` } }, 1000);
 
             }
 
 
             if (counterWin == 6) {
-                const win = document.querySelector(".youwon")
-                const content = document.createTextNode("You won!!!")
-                win.appendChild(content)
+                const win = document.querySelector(".youwon");
+                const content = document.createTextNode("You won!!!");
+                win.appendChild(content);
 
             }
         }
 
-        // const button = document.querySelector(".button")
-        // button.addEventListener("click", start)
-
-        // function start() {
-        //     const list = document.querySelectorAll(".containCards")
-        //     list[3].removeChild(list[3].childNodes[0])
-
-        //     for (let i = 0; i < cards.length; i++) {
-
-        //         while (cards[i].hasChildNodes()) {
-        //             cards[i].removeChild(cards[i].firstChild);
-        //         }
-        //     }
-
-
-        // }
-
-
-    }
-
-    const button = document.querySelector(".button")
-        button.addEventListener("click", start)
+        const button = document.querySelector(".button");
+        button.addEventListener("click", start);
 
         function start() {
-            const list = document.querySelectorAll(".containCards")
-            list[3].removeChild(list[3].childNodes[0])
+            const list = document.querySelectorAll(".containCards");
+            list[3].removeChild(list[3].childNodes[0]);
 
             for (let i = 0; i < cards.length; i++) {
 
@@ -110,7 +90,12 @@ function startGame() {
 
 
         }
-}
+
+
+    }
+
+
+// }
 
 
 
